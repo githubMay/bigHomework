@@ -1,0 +1,47 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="{{static_url("js/jquery1.42.min.js")}}"></script>
+    <script src="{{static_url("js/student.js")}}"></script>
+	<link rel="stylesheet" href="{{ static_url('css/student.css') }} ">
+    <title>Document</title> 
+</head>
+<body>
+
+
+    <div class="container">
+
+            <div class="header">简单课程管理系统
+                    <div id="state">
+                        <span>欢迎{% block state %}{% end %}使用课程管理系统</span>
+                         <button><a href="/" id="loginOut">退出登陆</a></button>
+                    </div>
+                    </div>        
+        <div class="left">
+            <form id="searchForm" method="POST">
+                {% block select %}{% end %}
+                <p>请选择要查询的学期</p>
+                <select id="term" value=""  name="otherTerm">
+                    <option>Autumn2017_2018</option>  
+                    <option>Spring2017_2018</option>  
+                </select>
+                <button type="submit" id="search">查询</button>
+            </form>
+        
+        
+        </div>
+        
+        <div id="comtain" class="content">
+                {% block comtain %}{% end %}
+        </div>
+        
+        <div class="footer" style="text-align:center;">Copyright 2018 by TJPU.</div>
+        </div>
+            
+</body>
+</html>
